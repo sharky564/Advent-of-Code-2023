@@ -6,7 +6,7 @@
 #include <algorithm>
 
 int main() {
-    std::ifstream file("aoc_2023_day_3.txt");
+    std::ifstream file("input.txt");
     std::string line;
     int sum = 0;
     std::vector<std::vector<char>> grid;

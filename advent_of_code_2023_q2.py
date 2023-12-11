@@ -1,4 +1,4 @@
-f = open("Advent of Code/aoc_2023_day_2.txt", 'r')
+f = open("Advent of Code/input.txt", 'r')
 out = f.read().split('\n')
 total = 0
 for line in out:

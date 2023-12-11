@@ -1,4 +1,4 @@
-f = open("aoc_2023_day_4.txt", 'r')
+f = open("input.txt", 'r')
 out = f.read().split('\n')
 total = 0
 num_cards = [1 for _ in range(len(out))]

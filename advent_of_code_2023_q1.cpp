@@ -3,7 +3,7 @@
 #include <string>
 
 int main() {
-    std::ifstream file("aoc_2023_day_1.txt");
+    std::ifstream file("input.txt");
     std::string line;
     int sum = 0;
     while (std::getline(file, line)) {

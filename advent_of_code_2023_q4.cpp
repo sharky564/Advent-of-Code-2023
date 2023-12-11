@@ -6,7 +6,7 @@
 #include <algorithm>
 
 int main() {
-    std::ifstream file("aoc_2023_day_4.txt");
+    std::ifstream file("input.txt");
     std::string line;
     std::vector<std::string> games;
     // read each line of input into games

@@ -1,6 +1,6 @@
 import math
 
-f = open("Advent of Code/aoc_2023_day_6.txt", 'r')
+f = open("input.txt", 'r')
 out = f.read().split('\n')
 
 time = int(''.join(out[0].split()[1:]))

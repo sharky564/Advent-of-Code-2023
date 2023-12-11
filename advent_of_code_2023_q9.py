@@ -1,6 +1,6 @@
 import numpy as np
 
-f = open("Advent of Code/aoc_2023_day_9.txt", 'r')
+f = open("input.txt", 'r')
 out = f.read().split('\n')
 
 

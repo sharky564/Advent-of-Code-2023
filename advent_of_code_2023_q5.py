@@ -1,4 +1,4 @@
-f = open("Advent of Code/aoc_2023_day_5.txt", 'r')
+f = open("input.txt", 'r')
 out = f.read().split('\n')
 
 seeds = [int(x) for x in out[0].split()[1:]]

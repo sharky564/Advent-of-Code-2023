@@ -1,4 +1,4 @@
-f = open("aoc_2023_day_7.txt", 'r')
+f = open("input.txt", 'r')
 out = f.read().split('\n')
 
 ranks = {0: [], 1: [], 2: [], 3: [], 4: [], 5: [], 6: []}

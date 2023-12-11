@@ -1,4 +1,4 @@
-f = open("aoc_2023_day_3.txt", 'r')
+f = open("input.txt", 'r')
 out = f.read().split('\n')
 lines = [list(line) for line in out]
 for line in lines:

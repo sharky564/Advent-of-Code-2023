@@ -7,7 +7,7 @@
 #include <unordered_map>
 
 int main() {
-    std::ifstream file("aoc_2023_day_5.txt");
+    std::ifstream file("input.txt");
     std::string line;
     std::vector<std::string> lines;
     // read each line of input into games

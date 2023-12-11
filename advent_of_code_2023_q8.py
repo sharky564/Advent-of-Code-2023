@@ -1,4 +1,4 @@
-f = open("Advent of Code/aoc_2023_day_8.txt", 'r')
+f = open("input.txt", 'r')
 out = f.read().split('\n')
 
 seq = out[0]

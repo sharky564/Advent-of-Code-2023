@@ -14,7 +14,7 @@ int num_sols(long long int time, long long int dist) {
 }
 
 int main() {
-    std::ifstream file("aoc_2023_day_6.txt");
+    std::ifstream file("input.txt");
     std::string line;
     long long int time;
     long long int distance;
