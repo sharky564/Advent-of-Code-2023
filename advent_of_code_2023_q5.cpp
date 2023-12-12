@@ -6,7 +6,73 @@
 #include <algorithm>
 #include <unordered_map>
 
-int main() {
+
+void part1() {
+    std::ifstream file("input.txt");
+    std::string line;
+    std::vector<std::string> lines;
+    // read each line of input into games
+    while (std::getline(file, line)) {
+        lines.push_back(line);
+    }
+    std::vector<long long int> seeds;
+    // seeds contains the integers for the first line, after the colon
+    std::stringstream ss(lines[0].substr(lines[0].find(":") + 1));
+    long long int value;
+    while (ss >> value) {
+        seeds.push_back(value);
+    }
+    int line_ind = 3;
+    std::vector<std::unordered_map<long long int, std::pair<long long int, long long int>>> maps;
+    while (line_ind < lines.size()) {
+        std::unordered_map<long long int, std::pair<long long int, long long int>> map;
+        while ((line_ind < lines.size()) && isdigit(lines[line_ind][0])) {
+            std::vector<long long int> line_values;
+            std::stringstream ss(lines[line_ind]);
+            long long int value;
+            while (ss >> value) {
+                line_values.push_back(value);
+            }
+            map[line_values[1]] = {line_values[0], line_values[2]};
+            line_ind++;
+        }
+        line_ind += 2;
+        maps.push_back(map);
+    }
+
+    std::vector<long long int> curr_vals = seeds;
+    for (int i = 0; i < maps.size(); i++) {
+        std::unordered_map<long long int, std::pair<long long int, long long int>> curr_map = maps[i];
+        std::vector<long long int> new_vals;
+        while (curr_vals.size() > 0) {
+            long long int curr_val = curr_vals.front();
+            curr_vals.erase(curr_vals.begin());
+            bool found = false;
+            for (auto it = curr_map.begin(); it != curr_map.end(); it++) {
+                if ((curr_val < it->first + it->second.second) && (it->first <= curr_val)) {
+                    long long int new_val = curr_val + it->second.first - it->first;
+                    new_vals.push_back(new_val);
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                new_vals.push_back(curr_val);
+            }
+        }
+        curr_vals = new_vals;
+    }
+    long long int min = curr_vals[0];
+    for (int i = 1; i < curr_vals.size(); i++) {
+        if (curr_vals[i] < min) {
+            min = curr_vals[i];
+        }
+    }
+    std::cout << min << std::endl;
+}
+
+
+void part2() {
     std::ifstream file("input.txt");
     std::string line;
     std::vector<std::string> lines;
@@ -81,5 +147,10 @@ int main() {
         }
     }
     std::cout << min << std::endl;
+}
+
+int main() {
+    part1();
+    part2();
     return 0;
 }
