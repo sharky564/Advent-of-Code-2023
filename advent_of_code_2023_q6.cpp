@@ -13,14 +13,38 @@ int num_sols(long long int time, long long int dist) {
     return max_val - min_val + 1;
 }
 
-int main() {
+void part1() {
     std::ifstream file("input.txt");
     std::string line;
     long long int time;
     long long int distance;
     std::getline(file, line);
     std::stringstream ss(line.substr(line.find(":") + 1));
-    // concatenate the numbers into a string
+    std::vector<int> times;
+    int value;
+    while (ss >> value) {
+        times.push_back(value);
+    }
+    std::getline(file, line);
+    ss = std::stringstream(line.substr(line.find(":") + 1));
+    std::vector<int> distances;
+    while (ss >> value) {
+        distances.push_back(value);
+    }
+    int total = num_sols(times[0], distances[0]);
+    for (int i = 1; i < times.size(); i++) {
+        total *= num_sols(times[i], distances[i]);
+    }
+    std::cout << total << std::endl;
+}
+
+void part2() {
+    std::ifstream file("input.txt");
+    std::string line;
+    long long int time;
+    long long int distance;
+    std::getline(file, line);
+    std::stringstream ss(line.substr(line.find(":") + 1));
     std::string num_str;
     std::string value;
     while (ss >> value) {
@@ -35,5 +59,10 @@ int main() {
     }
     distance = std::stoll(num_str);
     std::cout << num_sols(time, distance) << std::endl;
+}
+
+int main() {
+    part1();
+    part2();
     return 0;
 }
