@@ -24,9 +24,8 @@ def num_sols(nums_to_fit, curr_vals):
             if j - i + 1 >= num_to_fit:
                 if modified[j - num_to_fit] == '#':
                     j = len(curr_vals)
-                elif modified[j + 1] != '#' and modified[j - num_to_fit] != '#':
-                    val = num_sols(nums_to_fit[1:], curr_vals[j + 2:])
-                    total += val
+                elif modified[j + 1] != '#':
+                    total += num_sols(nums_to_fit[1:], curr_vals[j + 2:])
             j += 1
         if damaged_found:
             break
