@@ -1,7 +1,6 @@
-f = open("input.txt", 'r')
-out = f.read().split('\n')
-
 def part1():
+    f = open("input.txt", 'r')
+    out = f.read().split('\n')
     lines = [list(line) for line in out]
     total = 0
     for line_ind, line in enumerate(lines):
@@ -38,11 +37,11 @@ def part1():
                 curr_num += line[i]
             i += 1
     print(total)
-    
-    
 
 
 def part2():
+    f = open("input.txt", 'r')
+    out = f.read().split('\n')
     lines = [list(line) for line in out]
     for line in lines:
         i = 0

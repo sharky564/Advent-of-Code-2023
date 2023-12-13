@@ -1,8 +1,6 @@
-f = open("input.txt", 'r')
-out = f.read().split('\n')
-
-
 def part1():
+    f = open("input.txt", 'r')
+    out = f.read().split('\n')
     total = 0
     for line in out:
         game, draws = line.split(':')
@@ -27,6 +25,8 @@ def part1():
 
 
 def part2():
+    f = open("input.txt", 'r')
+    out = f.read().split('\n')
     total = 0
     for line in out:
         game, draws = line.split(':')

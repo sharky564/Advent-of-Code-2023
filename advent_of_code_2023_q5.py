@@ -1,8 +1,6 @@
-f = open("input.txt", 'r')
-out = f.read().split('\n')
-
-
 def part1():
+    f = open("input.txt", 'r')
+    out = f.read().split('\n')
     seeds = [int(x) for x in out[0].split()[1:]]
 
     curr_line_ind = 3
@@ -36,6 +34,8 @@ def part1():
 
 
 def part2():
+    f = open("input.txt", 'r')
+    out = f.read().split('\n')
     seeds = [int(x) for x in out[0].split()[1:]]
     seeds = list(zip(seeds[::2], seeds[1::2]))
 

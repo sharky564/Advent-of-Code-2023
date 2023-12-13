@@ -1,7 +1,6 @@
-f = open("input.txt", 'r')
-out = f.read().split('\n')
-
 def part1():
+    f = open("input.txt", 'r')
+    out = f.read().split('\n')
     ranks = {0: [], 1: [], 2: [], 3: [], 4: [], 5: [], 6: []}
     def cmp(a):
         if a == 'A':
@@ -61,6 +60,8 @@ def part1():
     print(total)
 
 def part2():
+    f = open("input.txt", 'r')
+    out = f.read().split('\n')
     ranks = {0: [], 1: [], 2: [], 3: [], 4: [], 5: [], 6: []}
     def cmp(a):
         if a == 'A':

@@ -1,8 +1,6 @@
-f = open("input.txt", 'r')
-out = f.read().split('\n')
-
-
 def part1():
+    f = open("input.txt", 'r')
+    out = f.read().split('\n')
     total = 0
     for line in out:
         win, nums = line.split(':')[1].split('|')
@@ -16,6 +14,8 @@ def part1():
 
 
 def part2():
+    f = open("input.txt", 'r')
+    out = f.read().split('\n')
     total = 0
     num_cards = [1 for _ in range(len(out))]
     for line in out:
