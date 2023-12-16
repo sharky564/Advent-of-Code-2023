@@ -51,7 +51,6 @@ def part2():
 
     curr_nodes = [key for key in vals.keys() if key[-1] == 'A']
     periods = []
-    count = 0
     for key in curr_nodes:
         curr_key = key
         iteration = 0
