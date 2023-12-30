@@ -130,7 +130,6 @@ void part2() {
         }
     }
 
-    // replace 'S' with appropriate pipe
     std::pair<int, int> prev_node = loop[loop.size() - 2];
     std::pair<int, int> curr_node = loop[0];
     std::pair<int, int> next_node = loop[1];

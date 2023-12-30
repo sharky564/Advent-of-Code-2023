@@ -1,4 +1,3 @@
-
 def part1():
     f = open("input.txt", 'r')
     out = f.read().split('\n')

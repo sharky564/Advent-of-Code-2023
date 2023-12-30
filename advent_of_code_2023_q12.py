@@ -1,6 +1,4 @@
 from functools import cache
-f = open("input.txt", 'r')
-out = f.read().split('\n')
 
 @cache
 def num_sols(nums_to_fit, curr_vals):
@@ -32,14 +30,31 @@ def num_sols(nums_to_fit, curr_vals):
         i = j
     return total
 
+def part1():
+    f = open("input.txt", 'r')
+    out = f.read().split('\n')
 
-total = 0
-for line in out:
-    curr_val, nums_to_fit = line.split()
-    nums_to_fit = tuple(map(int, nums_to_fit.split(',')))
-    new_curr_val = '?'.join([curr_val for _ in range(10)])
-    new_nums_to_fit = nums_to_fit * 10
-    out1 = num_sols(new_nums_to_fit, new_curr_val)
-    total += out1
+    total = 0
+    for line in out:
+        curr_val, nums_to_fit = line.split()
+        nums_to_fit = tuple(map(int, nums_to_fit.split(',')))
+        total += num_sols(nums_to_fit, curr_val)
+    
+    print(total)
 
-print(total)
+def part2():
+    f = open("input.txt", 'r')
+    out = f.read().split('\n')
+
+    total = 0
+    for line in out:
+        curr_val, nums_to_fit = line.split()
+        nums_to_fit = tuple(map(int, nums_to_fit.split(',')))
+        new_curr_val = '?'.join([curr_val for _ in range(5)])
+        new_nums_to_fit = nums_to_fit * 5
+        total += num_sols(new_nums_to_fit, new_curr_val)
+
+    print(total)
+
+part1()
+part2()
